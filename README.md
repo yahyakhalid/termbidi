@@ -3,6 +3,7 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/yahyakhalid/termbidi/actions/workflows/ci.yml"><img alt="CI status" src="https://github.com/yahyakhalid/termbidi/actions/workflows/ci.yml/badge.svg"></a>
   <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-2ea44f"></a>
   <img alt="Node.js 18 or newer" src="https://img.shields.io/badge/node-%E2%89%A518.18-339933">
   <a href="docs/benchmarks.md#1-unicode-conformance"><img alt="Unicode BidiCharacterTest 18.0: 91,690 of 91,690 cases pass" src="https://img.shields.io/badge/UAX%239%20conformance-91%2C690%2F91%2C690-1f6feb"></a>

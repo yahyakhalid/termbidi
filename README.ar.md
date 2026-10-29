@@ -5,6 +5,7 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/yahyakhalid/termbidi/actions/workflows/ci.yml"><img alt="حالة الاختبارات" src="https://github.com/yahyakhalid/termbidi/actions/workflows/ci.yml/badge.svg"></a>
   <a href="LICENSE"><img alt="الرخصة: MIT" src="https://img.shields.io/badge/license-MIT-2ea44f"></a>
   <img alt="Node.js 18 أو أحدث" src="https://img.shields.io/badge/node-%E2%89%A518.18-339933">
   <a href="docs/benchmarks.md#1-unicode-conformance"><img alt="اختبار Unicode الرسمي 18.0: نجحت 91,690 حالة من 91,690" src="https://img.shields.io/badge/UAX%239%20conformance-91%2C690%2F91%2C690-1f6feb"></a>
