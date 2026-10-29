@@ -1,0 +1,83 @@
+{
+  "date": "2026-10-29T19:39:23.430Z",
+  "node": "v26.12.1",
+  "corpusLines": 57,
+  "rtlLines": 55,
+  "orderingMatches": 45,
+  "orderingExplainedDifferences": 10,
+  "orderingRealMismatches": 0,
+  "ltrUnchanged": true,
+  "colorFidelity": 57,
+  "strippedEqualsPlain": 57,
+  "widthPreserved": 57,
+  "baselineRtlLinesWithIntactEscapes": 1,
+  "speed": {
+    "lines": 100000,
+    "ms": 3588,
+    "linesPerSecond": 27869
+  },
+  "mismatches": [
+    {
+      "line": "نجح الاختبار (5 من 6)",
+      "ours": "(6 نم 5) رابتخالا حجن",
+      "ref": ")6 نم 5( رابتخالا حجن",
+      "explained": true
+    },
+    {
+      "line": "اكتب npm install ثم شغّل npm test",
+      "ours": "npm test لغّش مث npm install بتكا",
+      "ref": "npm test لّغش مث npm install بتكا",
+      "explained": true
+    },
+    {
+      "line": "هل تريد المتابعة؟ [نعم/لا]",
+      "ours": "[ال/معن] ؟ةعباتملا ديرت له",
+      "ref": "]ال/معن[ ؟ةعباتملا ديرت له",
+      "explained": true
+    },
+    {
+      "line": "البرمجة بالعربية ممتعة 😊 جداً",
+      "ours": "اًدج 😊 ةعتمم ةيبرعلاب ةجمربلا",
+      "ref": "ًادج 😊 ةعتمم ةيبرعلاب ةجمربلا",
+      "explained": true
+    },
+    {
+      "line": "الحرف الأول من اسم «يحيى» هو ي",
+      "ours": "ي وه «ىيحي» مسا نم لوألا فرحلا",
+      "ref": "ي وه »ىيحي« مسا نم لوألا فرحلا",
+      "explained": true
+    },
+    {
+      "line": "قائمة: أولاً، ثانياً، ثالثاً.",
+      "ours": ".اًثلاث ،اًيناث ،اًلوأ :ةمئاق",
+      "ref": ".ًاثلاث ،ًايناث ،ًالوأ :ةمئاق",
+      "explained": true
+    },
+    {
+      "line": "الدَّرْسُ الأوَّلُ: الحُرُوفُ العَرَبِيَّةُ",
+      "ours": "ةُيَّبِرَعَلا فُورُحُلا :لُوَّألا سُرْدَّلا",
+      "ref": "ُةَّيِبَرَعلا ُفوُرُحلا :ُلَّوألا ُسْرَّدلا",
+      "explained": true
+    },
+    {
+      "line": "feat: إضافة دعم اللغة العربية (#42)",
+      "ours": "feat: (42#) ةيبرعلا ةغللا معد ةفاضإ",
+      "ref": "feat: )42#( ةيبرعلا ةغللا معد ةفاضإ",
+      "explained": true
+    },
+    {
+      "line": "הקובץ נשמר בהצלחה (3 קבצים)",
+      "ours": "(םיצבק 3) החלצהב רמשנ ץבוקה",
+      "ref": ")םיצבק 3( החלצהב רמשנ ץבוקה",
+      "explained": true
+    },
+    {
+      "line": "(مرحبا) [عالم] {اختبار}",
+      "ours": "{رابتخا} [ملاع] (ابحرم)",
+      "ref": "}رابتخا{ ]ملاع[ )ابحرم(",
+      "explained": true
+    }
+  ],
+  "colorFailures": [],
+  "widthFailures": []
+}

@@ -1,0 +1,43 @@
+name: Terminal report
+description: Tell us how termbidi behaves in your terminal, so the support table can be confirmed.
+labels: [terminal-report]
+body:
+  - type: input
+    id: terminal
+    attributes:
+      label: Terminal and version
+      placeholder: iTerm2 3.7.3
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: OS and font
+      placeholder: macOS 27, Menlo
+    validations:
+      required: true
+  - type: textarea
+    id: detect
+    attributes:
+      label: Output of `npx github:yahyakhalid/termbidi --detect`
+      render: json
+    validations:
+      required: true
+  - type: textarea
+    id: demo
+    attributes:
+      label: Screenshot of `npx github:yahyakhalid/termbidi --demo`
+      description: Is the "After" part readable and in the right order? Are the Arabic letters joined?
+    validations:
+      required: true
+  - type: dropdown
+    id: native
+    attributes:
+      label: Does this terminal reorder RTL text by itself?
+      description: Check with `printf 'שלום עולם\n'`. If it reads right without termbidi, the answer is yes.
+      options:
+        - "Yes"
+        - "No"
+        - Not sure
+    validations:
+      required: true

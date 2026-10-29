@@ -1,0 +1,72 @@
+{
+  "name": "termbidi",
+  "version": "0.1.0",
+  "description": "Show Arabic, Hebrew, Persian and Urdu correctly in terminals that don't support right-to-left text, without losing ANSI colors or column widths.",
+  "keywords": [
+    "bidi",
+    "rtl",
+    "arabic",
+    "hebrew",
+    "persian",
+    "urdu",
+    "terminal",
+    "tui",
+    "cli",
+    "ansi",
+    "unicode",
+    "uax9",
+    "arabic-shaping",
+    "windows-terminal",
+    "vscode"
+  ],
+  "homepage": "https://github.com/yahyakhalid/termbidi#readme",
+  "bugs": {
+    "url": "https://github.com/yahyakhalid/termbidi/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yahyakhalid/termbidi.git"
+  },
+  "license": "MIT",
+  "author": "Yahya Khalid (https://github.com/yahyakhalid)",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "termbidi": "bin/termbidi.js"
+  },
+  "files": [
+    "dist",
+    "bin",
+    "README.md",
+    "README.ar.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "engines": {
+    "node": ">=18.18"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test test/",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "bench": "npm run build && node scripts/bench.mjs",
+    "demo": "npm run build && node bin/termbidi.js --demo",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test"
+  },
+  "dependencies": {
+    "bidi-js": "^1.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.9.0"
+  }
+}

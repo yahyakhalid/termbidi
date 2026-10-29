@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Node ${{ matrix.node }} on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        node: [20, 22, 24]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - name: CLI smoke test
+        shell: bash
+        run: |
+          out=$(printf 'שלום עולם\nplain\n' | TERMBIDI=on node bin/termbidi.js --no-shape)
+          test "$out" = "$(printf 'םלוע םולש\nplain')"
+
+  conformance:
+    name: Unicode BidiCharacterTest
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: curl -sSfLO https://www.unicode.org/Public/UCD/latest/ucd/BidiCharacterTest.txt
+      - name: Run conformance check
+        run: |
+          node scripts/conformance.mjs BidiCharacterTest.txt | tee conformance.json
+          node -e "const r=require('./conformance.json'); if (r.fail !== 0) { console.error(r.fail + ' cases failed'); process.exit(1) }"
