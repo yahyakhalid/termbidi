@@ -12,6 +12,24 @@
 
 <p align="center"><b>English</b> · <a href="README.ar.md">العربية</a></p>
 
+<p align="center">
+  <a href="https://github.com/topics/rtl"><code>#rtl</code></a>
+  <a href="https://github.com/topics/arabic"><code>#arabic</code></a>
+  <a href="https://github.com/topics/hebrew"><code>#hebrew</code></a>
+  <a href="https://github.com/topics/persian"><code>#persian</code></a>
+  <a href="https://github.com/topics/urdu"><code>#urdu</code></a>
+  <a href="https://github.com/topics/kurdish"><code>#kurdish</code></a>
+  <a href="https://github.com/topics/bidi"><code>#bidi</code></a>
+  <a href="https://github.com/topics/unicode"><code>#unicode</code></a>
+  <a href="https://github.com/topics/terminal"><code>#terminal</code></a>
+  <a href="https://github.com/topics/cli"><code>#cli</code></a>
+  <a href="https://github.com/topics/tui"><code>#tui</code></a>
+  <a href="https://github.com/topics/ansi"><code>#ansi</code></a>
+  <a href="https://github.com/topics/i18n"><code>#i18n</code></a>
+  <a href="https://github.com/topics/nodejs"><code>#nodejs</code></a>
+  <a href="https://github.com/topics/typescript"><code>#typescript</code></a>
+</p>
+
 # termbidi
 
 **Make Arabic, Hebrew, Persian, Urdu and Kurdish readable in terminals that don't support right-to-left text, without losing ANSI colors or column widths.**
@@ -42,6 +60,16 @@ Each app currently patches this on its own, or not at all:
 | **Same width** | A line takes the same number of columns before and after, so tables and borders stay aligned |
 | **Terminal-aware** | Leaves text alone in the terminals it recognises as reordering RTL themselves (iTerm2 ≥ 3.7, mintty, Konsole, VTE), so the text is not flipped twice there |
 | **Safe by default** | Lines without RTL text, lines with cursor movement and lines with malformed escape sequences pass through byte for byte; styles are rebuilt from known SGR parameters only |
+
+## Screenshots
+
+Real output in xterm.js 6 with the WebGL renderer, the engine behind the VS Code terminal. Left: the raw text. Right: the same text piped through termbidi.
+
+<p align="center"><img src="docs/images/xterm-before-after.png" alt="Eight lines of colored Arabic, Hebrew, Persian, Urdu and Kurdish terminal output, reversed and disconnected on the left and readable on the right" width="100%"></p>
+
+Why letter shaping is on by default: with reordering alone (`--no-shape`), the words are in the right order but the Arabic letters still don't join.
+
+<p align="center"><img src="docs/images/xterm-no-shaping.png" alt="The same lines reordered without shaping: correct word order, but Arabic letters shown in disconnected forms" width="100%"></p>
 
 ## Try it
 

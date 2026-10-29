@@ -1,6 +1,6 @@
 # Banner source
 
-`banner.html` builds `docs/images/banner.png` and `social-preview.png`. `before.png` and `after.png` are crops of the real xterm.js render in `docs/images/xterm-before-after.png` (made with `scripts/render-page.mjs`).
+`banner.html` builds `docs/images/banner.png` and `social-preview.png` (English README); `banner-ar.html` builds `docs/images/banner-ar.png` (Arabic README). `before.png` and `after.png` are crops of the real xterm.js render in `docs/images/xterm-before-after.png` (made with `scripts/render-page.mjs`).
 
 Serve this folder over HTTP and screenshot it at 1280x640:
 

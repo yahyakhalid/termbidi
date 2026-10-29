@@ -1,7 +1,7 @@
 <div dir="rtl">
 
 <p align="center">
-  <img src="docs/images/banner.png" alt="termbidi: مخرجات طرفية بالعربية والعبرية والفارسية والأردية والكردية، غير مقروءة قبل الأداة ومقروءة بعدها" width="100%">
+  <img src="docs/images/banner-ar.png" alt="termbidi: مخرجات طرفية بالعربية والعبرية والفارسية والأردية والكردية، غير مقروءة قبل الأداة ومقروءة بعدها" width="100%">
 </p>
 
 <p align="center">
@@ -13,6 +13,24 @@
 </p>
 
 <p align="center"><a href="README.md">English</a> · <b>العربية</b></p>
+
+<p align="center">
+  <a href="https://github.com/topics/rtl"><code>#rtl</code></a>
+  <a href="https://github.com/topics/arabic"><code>#arabic</code></a>
+  <a href="https://github.com/topics/hebrew"><code>#hebrew</code></a>
+  <a href="https://github.com/topics/persian"><code>#persian</code></a>
+  <a href="https://github.com/topics/urdu"><code>#urdu</code></a>
+  <a href="https://github.com/topics/kurdish"><code>#kurdish</code></a>
+  <a href="https://github.com/topics/bidi"><code>#bidi</code></a>
+  <a href="https://github.com/topics/unicode"><code>#unicode</code></a>
+  <a href="https://github.com/topics/terminal"><code>#terminal</code></a>
+  <a href="https://github.com/topics/cli"><code>#cli</code></a>
+  <a href="https://github.com/topics/tui"><code>#tui</code></a>
+  <a href="https://github.com/topics/ansi"><code>#ansi</code></a>
+  <a href="https://github.com/topics/i18n"><code>#i18n</code></a>
+  <a href="https://github.com/topics/nodejs"><code>#nodejs</code></a>
+  <a href="https://github.com/topics/typescript"><code>#typescript</code></a>
+</p>
 
 # termbidi
 
@@ -44,6 +62,16 @@
 | **العرض نفسه** | السطر يأخذ عدد الأعمدة نفسه قبل التحويل وبعده، فتبقى الجداول والحدود في مكانها |
 | **تعرف طرفيتك** | لا تلمس النص في الطرفيات التي تتعرّف عليها وتعرف أنها ترتّب العربية بنفسها (iTerm2 3.7 وما بعده، mintty، Konsole، VTE)، فلا ينقلب النص فيها مرتين |
 | **آمنة افتراضياً** | الأسطر التي ليس فيها نص من اليمين لليسار، والتي تحرّك المؤشر، والتي فيها أكواد تحكم مشوّهة، تمر كما هي دون أي تغيير، والتنسيق يُعاد بناؤه من معاملات ألوان معروفة فقط |
+
+## لقطات
+
+مخرجات حقيقية في xterm.js 6 بمحرك WebGL، وهو المحرك الذي تعمل عليه طرفية VS Code. اليسار: النص كما يُطبع. اليمين: النص نفسه بعد تمريره عبر termbidi.
+
+<p align="center"><img src="docs/images/xterm-before-after.png" alt="ثمانية أسطر ملوّنة بالعربية والعبرية والفارسية والأردية والكردية، مقلوبة ومفككة على اليسار ومقروءة على اليمين" width="100%"></p>
+
+لماذا وصل الحروف مفعّل افتراضياً: مع إعادة الترتيب وحدها (`--no-shape`) تأتي الكلمات بترتيبها الصحيح، لكن الحروف العربية تبقى منفصلة.
+
+<p align="center"><img src="docs/images/xterm-no-shaping.png" alt="الأسطر نفسها بعد إعادة الترتيب دون وصل الحروف: ترتيب الكلمات صحيح لكن الحروف العربية منفصلة" width="100%"></p>
 
 ## جرّبها
 
