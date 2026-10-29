@@ -28,8 +28,10 @@ npm run bench     # throughput
 npm run demo      # before/after in your terminal
 ```
 
-Source is in `src/` (TypeScript, compiled to `dist/`), the CLI in `bin/`, tests
-in `test/` (Node's built-in test runner).
+Source is in `src/` (TypeScript), the CLI in `bin/`, tests in `test/` (Node's
+built-in test runner). `dist/` is committed so the package installs straight
+from GitHub without a build step: run `npm run build` and commit `dist/`
+together with your `src/` changes (CI checks they match).
 
 To check reordering against the Unicode standard:
 

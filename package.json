@@ -59,7 +59,6 @@
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "bench": "npm run build && node scripts/bench.mjs",
     "demo": "npm run build && node bin/termbidi.js --demo",
-    "prepare": "npm run build",
     "prepublishOnly": "npm test"
   },
   "dependencies": {

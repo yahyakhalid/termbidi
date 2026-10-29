@@ -25,6 +25,9 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm test
+      - name: Built files are up to date
+        if: matrix.os == 'ubuntu-latest' && matrix.node == 22
+        run: git diff --exit-code -- dist
       - name: CLI smoke test
         shell: bash
         run: |
