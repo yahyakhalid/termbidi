@@ -5,6 +5,11 @@ All notable changes to this project are documented here. The format follows
 [Semantic Versioning](https://semver.org/). Until 1.0, minor versions may
 change the API.
 
+## [Unreleased]
+
+### Changed
+- Screenshots and banners rendered with Vazir Code, a monospace font whose Arabic forms fill the cell; README section on fonts. `scripts/render-page.mjs` accepts `?font=` and `&family=`.
+
 ## [0.1.0] - 2026-10-29
 
 First public, experimental release.

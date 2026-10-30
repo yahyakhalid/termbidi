@@ -9,3 +9,5 @@ python -m http.server 8000
 # then, for example:
 chrome --headless=new --window-size=1280,640 --force-device-scale-factor=2 --screenshot=banner.png http://localhost:8000/banner.html
 ```
+
+The terminal screenshots use Vazir Code (public domain): `node scripts/render-page.mjs <xterm dir> render.html`, then open `render.html?font=vazir.woff2&family=vazir&size=19&cols=52`.

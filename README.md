@@ -107,6 +107,18 @@ some-command | termbidi --width auto --align-rtl
 | `-f, --force` | Reorder even if the terminal seems to do it itself |
 | `--detect` | Print which terminal was recognised and what termbidi will do |
 
+## Fonts: make joined letters touch
+
+termbidi gives each Arabic letter its joined form, but a terminal draws every character in a fixed-width cell. With an ordinary fallback font the joined forms are narrower than the cell, so small gaps appear between letters. A monospace font whose Arabic forms are drawn to fill the cell removes the gaps:
+
+| Font | Licence | Notes |
+|---|---|---|
+| [Vazir Code](https://github.com/rastikerdar/vazir-code-font) | Public domain | Used for the screenshots above |
+| [Kawkab Mono](https://github.com/aiaf/kawkab-mono) | OFL 1.1 | Designed for Arabic code |
+| DejaVu Sans Mono | Free licence | Often installed on Linux |
+
+Set it as your terminal font, or as a fallback after your usual font (for example in VS Code: `"terminal.integrated.fontFamily": "Cascadia Mono, Vazir Code"`).
+
 ## How it differs from the alternatives
 
 | | ANSI colors kept | Column-aware wrapping | Arabic joining | Knows which terminals reorder | Library for Node apps |

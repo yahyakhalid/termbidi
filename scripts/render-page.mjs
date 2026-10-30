@@ -29,7 +29,10 @@ const html = `<!doctype html>
 <script src="${xtermDir}/node_modules/@xterm/addon-webgl/lib/addon-webgl.js"></script>
 <script>
 const q = new URLSearchParams(location.search);
-const opts = {cols: Number(q.get('cols') || 60), rows: ${DEMO_LINES.length + 1}, fontSize: Number(q.get('size') || 16), fontFamily: 'Cascadia Mono, Consolas, monospace', theme:{background:'#010409'}};
+// ?font=<url of a .woff2/.ttf>&family=<name> renders with a monospace font whose
+// Arabic presentation forms fill the cell, so joined letters touch.
+const family = q.get('family');
+const opts = {cols: Number(q.get('cols') || 60), rows: ${DEMO_LINES.length + 1}, fontSize: Number(q.get('size') || 16), fontFamily: (family ? '"' + family + '", ' : '') + 'Cascadia Mono, Consolas, monospace', theme:{background:'#010409'}};
 // The WebGL renderer draws every cell on its own, like VS Code's default
 // (terminal.integrated.gpuAcceleration = auto). The DOM renderer would let the
 // browser lay out each row, which is not what VS Code users see by default.
@@ -41,10 +44,16 @@ function make(id, data) {
   t.write(data);
   return t;
 }
-make('before', ${JSON.stringify(before)});
-make('after', ${JSON.stringify(after)});
-document.title = 'termbidi render test (' + renderer + ')';
-window.__ready = true;
+(async () => {
+  if (family && q.get('font')) {
+    const face = new FontFace(family, 'url(' + q.get('font') + ')');
+    document.fonts.add(await face.load());
+  }
+  make('before', ${JSON.stringify(before)});
+  make('after', ${JSON.stringify(after)});
+  document.title = 'termbidi render test (' + renderer + ')';
+  window.__ready = true;
+})();
 </script></body></html>`;
 writeFileSync(out, html);
 console.log(out);
